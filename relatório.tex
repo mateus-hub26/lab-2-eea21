@@ -15,7 +15,7 @@
 \usepackage{hyperref} % Links no sumário
 
 \title{\textbf{Laboratório EEA-21 -- 2ª Experiência}\\ \large Circuitos Combinacionais: Multiplexadores, Decodificadores e Codificadores}
-\author{Seu Nome / Turma}
+\author{Equipe: Marcello Ryaj e Matheus Levi/ Turma: Comp 28}
 \date{\today}
 
 \begin{document}
@@ -87,6 +87,64 @@ Para a obtenção do esquemático, as expressões originais foram convertidas pa
 
 \input{sections/questao2.tex}
 
+\subsection{Diagrama Esquemático}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{esquematico_4_2.png}
+%     \caption{Diagrama esquemático do conversor Gray-Binário.}
+% \end{figure}
+
+\subsection{Diagrama de Temporização}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{tempo_4_2.png}
+%     \caption{Simulação funcional do conversor Gray-Binário.}
+% \end{figure}
+
+% ---------------------------------------------------------
+\section{Decodificador 3x8}
+
+\subsection{Tabela Verdade e Expressões Booleanas}
+
+A tabela verdade de um decodificador 3x8 com entrada em binário puro ($A_2, A_1, A_0$) e entrada de habilitação ($En$) é apresentada a seguir. Quando $En = 0$, o decodificador está desabilitado e todas as saídas permanecem em nível baixo (0), independentemente dos valores de entrada. Quando $En = 1$, a combinação de entrada ativa exclusivamente a saída correspondente.
+
+\begin{table}[H]
+    \centering
+    \caption{Tabela Verdade do Decodificador 3x8 com Enable}
+    \begin{tabular}{cccc|cccccccc}
+        \toprule
+        \textbf{$En$} & \textbf{$A_2$} & \textbf{$A_1$} & \textbf{$A_0$} & \textbf{$Y_0$} & \textbf{$Y_1$} & \textbf{$Y_2$} & \textbf{$Y_3$} & \textbf{$Y_4$} & \textbf{$Y_5$} & \textbf{$Y_6$} & \textbf{$Y_7$} \\
+        \midrule
+        0             & X              & X              & X              & 0              & 0              & 0              & 0              & 0              & 0              & 0              & 0              \\
+        1             & 0              & 0              & 0              & 1              & 0              & 0              & 0              & 0              & 0              & 0              & 0              \\
+        1             & 0              & 0              & 1              & 0              & 1              & 0              & 0              & 0              & 0              & 0              & 0              \\
+        1             & 0              & 1              & 0              & 0              & 0              & 1              & 0              & 0              & 0              & 0              & 0              \\
+        1             & 0              & 1              & 1              & 0              & 0              & 0              & 1              & 0              & 0              & 0              & 0              \\
+        1             & 1              & 0              & 0              & 0              & 0              & 0              & 0              & 1              & 0              & 0              & 0              \\
+        1             & 1              & 0              & 1              & 0              & 0              & 0              & 0              & 0              & 1              & 0              & 0              \\
+        1             & 1              & 1              & 0              & 0              & 0              & 0              & 0              & 0              & 0              & 1              & 0              \\
+        1             & 1              & 1              & 1              & 0              & 0              & 0              & 0              & 0              & 0              & 0              & 1              \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+A partir da tabela, extraímos as expressões booleanas simplificadas para cada saída. Como o decodificador só funciona quando habilitado, o termo $En$ deve estar presente (em nível lógico alto) em todas as equações, multiplicando os mintermos das entradas:
+
+\begin{align*}
+    Y_0 & = En \cdot \overline{A_2} \cdot \overline{A_1} \cdot \overline{A_0} \\
+    Y_1 & = En \cdot \overline{A_2} \cdot \overline{A_1} \cdot A_0            \\
+    Y_2 & = En \cdot \overline{A_2} \cdot A_1 \cdot \overline{A_0}            \\
+    Y_3 & = En \cdot \overline{A_2} \cdot A_1 \cdot A_0                       \\
+    Y_4 & = En \cdot A_2 \cdot \overline{A_1} \cdot \overline{A_0}            \\
+    Y_5 & = En \cdot A_2 \cdot \overline{A_1} \cdot A_0                       \\
+    Y_6 & = En \cdot A_2 \cdot A_1 \cdot \overline{A_0}                       \\
+    Y_7 & = En \cdot A_2 \cdot A_1 \cdot A_0
+\end{align*}
+\subsection{Diagrama Esquemático}
+
+\subsection{Diagrama de Temporização}
+
+% ---------------------------------------------------------
 \section{Codificador de Prioridade 4x2 (Produto de Somas)}
 
 \subsection{Tabela Verdade e Expressões Booleanas}
