@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 
 % Pacotes essenciais
+\usepackage{karnaugh-map}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[portuguese]{babel}
@@ -36,31 +37,31 @@ Abaixo apresentamos a tabela verdade para o DEMUX 1x4. Considerando $En$ como a 
         \toprule
         \textbf{$En$} & \textbf{$S_1$} & \textbf{$S_0$} & \textbf{$D$} & \textbf{$Y_0$} & \textbf{$Y_1$} & \textbf{$Y_2$} & \textbf{$Y_3$} \\
         \midrule
-        0 & X & X & X & 0 & 0 & 0 & 0 \\
-        1 & 0 & 0 & D & D & 0 & 0 & 0 \\
-        1 & 0 & 1 & D & 0 & D & 0 & 0 \\
-        1 & 1 & 0 & D & 0 & 0 & D & 0 \\
-        1 & 1 & 1 & D & 0 & 0 & 0 & D \\
+        0             & X              & X              & X            & 0              & 0              & 0              & 0              \\
+        1             & 0              & 0              & D            & D              & 0              & 0              & 0              \\
+        1             & 0              & 1              & D            & 0              & D              & 0              & 0              \\
+        1             & 1              & 0              & D            & 0              & 0              & D              & 0              \\
+        1             & 1              & 1              & D            & 0              & 0              & 0              & D              \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 As expressões booleanas na forma de Soma de Produtos (SOP) seriam:
 \begin{align*}
-    Y_0 &= En \cdot \overline{S_1} \cdot \overline{S_0} \cdot D \\
-    Y_1 &= En \cdot \overline{S_1} \cdot S_0 \cdot D \\
-    Y_2 &= En \cdot S_1 \cdot \overline{S_0} \cdot D \\
-    Y_3 &= En \cdot S_1 \cdot S_0 \cdot D
+    Y_0 & = En \cdot \overline{S_1} \cdot \overline{S_0} \cdot D \\
+    Y_1 & = En \cdot \overline{S_1} \cdot S_0 \cdot D            \\
+    Y_2 & = En \cdot S_1 \cdot \overline{S_0} \cdot D            \\
+    Y_3 & = En \cdot S_1 \cdot S_0 \cdot D
 \end{align*}
 
 Para a implementação solicitada (apenas portas NOR), aplicamos o Teorema de De Morgan ($A \cdot B = \overline{\overline{A} + \overline{B}}$):
 % Substitua pelas equações finais manipuladas
 \begin{align*}
-    Y_0 &= \overline{ \overline{En} + S_1 + S_0 + \overline{D} } \\
-    Y_0 &= \overline{ \overline{En} + S_1 + S_0 + \overline{D} } \\
-    Y_1 &= \overline{ \overline{En} + S_1 + \overline{S_0} + \overline{D} } \\
-    Y_2 &= \overline{ \overline{En} + \overline{S_1} + S_0 + \overline{D} } \\
-    Y_3 &= \overline{ \overline{En} + \overline{S_1} + \overline{S_0} + \overline{D} }
+    Y_0 & = \overline{ \overline{En} + S_1 + S_0 + \overline{D} }                       \\
+    Y_0 & = \overline{ \overline{En} + S_1 + S_0 + \overline{D} }                       \\
+    Y_1 & = \overline{ \overline{En} + S_1 + \overline{S_0} + \overline{D} }            \\
+    Y_2 & = \overline{ \overline{En} + \overline{S_1} + S_0 + \overline{D} }            \\
+    Y_3 & = \overline{ \overline{En} + \overline{S_1} + \overline{S_0} + \overline{D} }
     % Adicione as demais aqui...
 \end{align*}
 
@@ -84,33 +85,8 @@ Para a obtenção do esquemático, as expressões originais foram convertidas pa
 % ---------------------------------------------------------
 \section{Codificador (Gray para Binário 3 bits)}
 
-\subsection{Tabela Verdade}
-% Tabela a ser preenchida com as entradas Gray e saídas Binárias
+\input{sections/questao2.tex}
 
-\subsection{Diagrama Esquemático}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{esquematico_4_2.png}
-%     \caption{Diagrama esquemático do conversor Gray-Binário.}
-% \end{figure}
-
-\subsection{Diagrama de Temporização}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{tempo_4_2.png}
-%     \caption{Simulação funcional do conversor Gray-Binário.}
-% \end{figure}
-
-% ---------------------------------------------------------
-\section{Decodificador 3x8}
-
-\subsection{Tabela Verdade e Expressões Booleanas}
-
-\subsection{Diagrama Esquemático}
-
-\subsection{Diagrama de Temporização}
-
-% ---------------------------------------------------------
 \section{Codificador de Prioridade 4x2 (Produto de Somas)}
 
 \subsection{Tabela Verdade e Expressões Booleanas}
