@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[portuguese]{babel}
+\usepackage{indentfirst}
 \usepackage{amsmath, amsfonts, amssymb} % Matemática e lógica
 \usepackage{graphicx} % Inserção de imagens (diagramas e esquemáticos)
 \usepackage{booktabs} % Tabelas mais bonitas
@@ -12,6 +13,7 @@
 \usepackage{float} % Posicionamento rígido de figuras (H)
 \usepackage{geometry}
 \geometry{top=3cm, bottom=2cm, left=3cm, right=2cm} % Margens ABNT/Padrão
+\setlength{\parindent}{1.25cm}
 \usepackage{hyperref} % Links no sumário
 
 \title{\textbf{Laboratório EEA-21 -- 2ª Experiência}\\ \large Circuitos Combinacionais: Multiplexadores, Decodificadores e Codificadores}
@@ -35,20 +37,9 @@
 % ---------------------------------------------------------
 \input{sections/questao3.tex}
 
-\subsection{Diagrama Esquemático}
-
-\subsection{Diagrama de Temporização}
-
 % ---------------------------------------------------------
 \input{sections/questao4.tex}
 % ---------------------------------------------------------
-\section{Codificador de Prioridade 8x3 (Expansão)}
 
-\subsection{Expressões Booleanas e Esquemático do Bloco H}
-A decomposição utiliza os módulos 4x2 projetados anteriormente. O Bloco H atua como a lógica combinacional de união.
-
-\subsection{Diagrama de Temporização do Bloco H}
-
-\subsection{Diagrama de Temporização do Dispositivo Completo}
-
+\input{sections/questao5.tex}
 \end{document}

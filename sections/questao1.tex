@@ -31,11 +31,9 @@ Para a implementação solicitada (apenas portas NOR), aplicamos o Teorema de De
 % Substitua pelas equações finais manipuladas
 \begin{align*}
     Y_0 & = \overline{ \overline{En} + S_1 + S_0 + \overline{D} }                       \\
-    Y_0 & = \overline{ \overline{En} + S_1 + S_0 + \overline{D} }                       \\
     Y_1 & = \overline{ \overline{En} + S_1 + \overline{S_0} + \overline{D} }            \\
     Y_2 & = \overline{ \overline{En} + \overline{S_1} + S_0 + \overline{D} }            \\
     Y_3 & = \overline{ \overline{En} + \overline{S_1} + \overline{S_0} + \overline{D} }
-    % Adicione as demais aqui...
 \end{align*}
 
 \subsection{Diagrama Esquemático}
@@ -43,14 +41,18 @@ Para a obtenção do esquemático, as expressões originais foram convertidas pa
 
 \begin{figure}[H]
     \centering
-    % Substitua "nome_da_imagem.png" pelo arquivo do seu esquemático
-    % \includegraphics[width=0.8\textwidth]{esquematico_4_1.png}
+    \includegraphics[width=0.8\textwidth]{fig/EsquematicoExercicio1.png}
     \caption{Diagrama esquemático do DEMUX 1x4 (Portas NOR).}
 \end{figure}
+
+O diagrama esquemático soluciona a restrição do projeto de utilizar exclusivamente portas NOR mediante a aplicação do Teorema de De Morgan. A dupla negação das expressões canônicas originais converteu algebricamente os produtos lógicos em somas negadas, permitindo que a seleção e o roteamento do sinal de entrada sejam realizados apenas com esta porta lógica universal.
 
 \subsection{Diagrama de Temporização}
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.9\textwidth]{tempo_4_1.png}
+    \includegraphics[width=1\textwidth]{fig/SimuExercicio1.png}
     \caption{Simulação funcional (diagrama de temporização) do DEMUX 1x4.}
+
 \end{figure}
+
+ A simulação funcional mostra o sucesso do circuito ao comprovar que a adaptação para portas NOR manteve a integridade lógica do demultiplexador. O diagrama evidencia que a forma de onda da entrada de dados é replicada fidedignamente única e exclusivamente na saída $Y_i$ ditada pelas variáveis de seleção naquele instante, confirmando o roteamento exato.

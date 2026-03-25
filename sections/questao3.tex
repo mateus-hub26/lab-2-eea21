@@ -36,3 +36,26 @@ A partir da tabela, extraímos as expressões booleanas simplificadas para cada 
     Y_6 & = En \cdot A_2 \cdot A_1 \cdot \overline{A_0}                       \\
     Y_7 & = En \cdot A_2 \cdot A_1 \cdot A_0
 \end{align*}
+
+\subsection{Diagrama Esquemático}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{fig/EsquematicoExercicio3.png}
+    \caption{Diagrama esquemático do decodificador 3x8 para entrada em binário puro, implementado no ambiente Quartus.}
+    \label{fig:esquematico_decod}
+\end{figure}
+
+A arquitetura esquemática soluciona o projeto ao implementar fisicamente os oito mintermos de três variáveis. Utilizando inversores e portas AND, o circuito garante matematicamente que qualquer combinação do binário puro na entrada ativará uma, e somente uma, das oito saídas de dados, cumprindo o requisito fundamental do decodificador 3x8.
+
+\subsection{Diagrama de Temporização}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{fig/SimuExercicio3.png}
+    \caption{Diagrama de temporização obtido via simulação funcional, demonstrando a ativação sequencial das saídas $Y_0$ a $Y_7$ conforme a variação da entrada binária de 0 a 7.}
+    \label{fig:simulacao_decod}
+\end{figure}
+A simulação funcional valida a exatidão do projeto ao comprovar a correspondência biunívoca entre a entrada e as saídas. Ao submeter o circuito à varredura binária completa de 0 a 7, o diagrama atesta que a saída $Y_i$ é ativada exclusivamente quando a entrada equivale ao seu índice $i$, provando o funcionamento correto da lógica de decodificação projetada.
+
+
